@@ -14,6 +14,8 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *tweets;
+@property (nonatomic, retain) NSMutableString *dataString; 
+@property (nonatomic, retain) NSString *currentElement;
 
 -(void) startLoadingTweets;
 

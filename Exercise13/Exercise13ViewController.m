@@ -18,15 +18,16 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = NSLocalizedString(@"Master", @"Master");
+        twitterTweets = [[TwitterTimeLine alloc] init]; 
+        [twitterTweets startLoadingTweets];
     }
-	twitterTweets = [[TwitterTimeLine alloc] init]; 
-	[twitterTweets startLoadingTweets];
     
     return self;
 }
 
 - (void)dealloc
 {
+    [twitterTweets release];
     [super dealloc];
 }
 

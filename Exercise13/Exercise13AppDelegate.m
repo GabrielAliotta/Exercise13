@@ -15,13 +15,17 @@
 
 @synthesize window=_window;
 
-@synthesize viewController=_viewController;
+//@synthesize viewController=_viewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-     
-    self.window.rootViewController = [_viewController initWithNibName:@"Exercise13ViewController" bundle:nil];
+    
+    Exercise13ViewController *viewController = [[[Exercise13ViewController alloc] initWithNibName:@"Exercise13ViewController" 
+                                                                                        bundle:nil] 
+                                                autorelease];
+    self.window.rootViewController = viewController;
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -68,7 +72,6 @@
 - (void)dealloc
 {
     [_window release];
-    [_viewController release];
     [super dealloc];
 }
 
